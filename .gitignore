@@ -30,5 +30,6 @@ cFS/bin/cpu1
 cFS/bin/host
 cFS/bin/include
 cFS/bin/lib
+cFS/build
 cFS/cFE
 **/gen

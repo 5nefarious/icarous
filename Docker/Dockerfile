@@ -31,6 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
        cmake \
        zlib1g-dev \
        tcpd:i386 \
+       libnlopt-dev:i386 \
        git 
 
 
@@ -61,5 +62,6 @@ RUN cd /icarous/cFS && mkdir build && cd build && \
     JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" \
     PLEXIL_HOME="/icarous/Modules/Plexil" \
     OSAL_HOME="/icarous/cFS/cFE/osal" \
-    cmake ../.. -DSITL=on
+    NLOPT_PATH="/usr/lib/i386-linux-gnu" \
+    cmake ../.. -DSITL=on -DSPLINES=on
 RUN cd /icarous/cFS/build && cmake --build . --target cpu1-install
